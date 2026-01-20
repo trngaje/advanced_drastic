@@ -18,9 +18,28 @@ Other changings are as follows.<br>
 
 You can download the library from the following path.<br>
 [libs](https://github.com/trngaje/advanced_drastic/releases/tag/libs) <br>
-Copy to the `libSDL2-2.0.so .0` to `libs` folder <br>
+Copy to the `libSDL2-2.0.so.0` and `libadvdrastic.so` to `libs` folder <br>
 
-Supports all devices that support mali, gles and egl environments.
+Supports all devices that support mali, gles, drm and egl environments.
+
+The function for hooking drastic is defined on libadvdrastic.so.
+Modify libSDL2-2.0.so so that functions within libadvdrastic.so can be called.
+In some cases, the appropriate libSDL2 source is not available for the device
+Modify libc.so.6 so that functions within libadvdrastic.so can be called.
+libc.so.6 can modify more drastic functions because there are functions that run before libSDL2-2.0.
+
+Each new device needs a different build environment. If there is an operational libSDL source, you just need to apply the patch to run libadvdrastic.so to build it.
+~~~
+patch -p1 < 0006-add-hook-for-drastic.patch
+~~~
+
+in arkos
+~~~
+mv 0006-add-hook-for-drastic.patch sdl2-patch-0006-add-hook-for-drastic.patch
+cp sdl2-patch-0006-add-hook-for-drastic.patch ./patches
+./build.sh sdl2
+~~~
+
 
 - The devices that have been verified for operation are as follows.<br>
 
@@ -43,17 +62,17 @@ test files for crossmix, trimui smart pro <br>
 
 key | assign
 ---------------|--------
-l2 | toggle stylus / dpad
-r2 | swap screen0/1
-menu | call setting menu
-select | hot key
-select + left | dec index of layout
-select + right | inc index of layout
-select + y | change themes
-select + b | toggle blur / pixel mode
-select + start | display steward custom settings
-select + l | quick load
-select + r | quick save
+<kbd>l2</kbd> | toggle stylus / dpad
+<kbd>r2</kbd>  | swap screen0/1
+<kbd>menu</kbd> | call setting menu
+<kbd>select</kbd> | hot key
+<kbd>select</kbd> + <kbd>left</kbd>  | dec index of layout
+<kbd>select</kbd> + <kbd>right</kbd>  | inc index of layout
+<kbd>select</kbd> + <kbd>y</kbd>  | change themes
+<kbd>select</kbd> + <kbd>b</kbd>  | toggle blur / pixel mode
+<kbd>select</kbd> + <kbd>start</kbd>  | display steward custom settings
+<kbd>select</kbd> + <kbd>l</kbd>  | quick load
+<kbd>select</kbd> + <kbd>r</kbd>  | quick save
 
 
 > Configure folders
@@ -119,6 +138,32 @@ name| image
 5_rb.png |  ![](resources/pen/5_rb.png)
 6_cp.png |  ![](resources/pen/6_cp.png)
 7_lb.png |  ![](resources/pen/7_lb.png)
+
+
+#### How to capture logs for debug in ssh
+(The next version will create an advdrastic.log file.)
+
+~~~
+# tty
+/dev/pts/0
+~~~
+
+edit launch.sh
+~~~
+drastic "$1" > /dev/pts/0 2>&1
+~~~
+
+#### parameters1 : input assign
+in order to input the buttons sequentially, write a script as below and execute the drastic.
+~~~
+launch.sh --input-assign
+~~~
+
+*****
+
+#### executable format
+
+By default, the original drastic supports the **.nds**, **.zip**, **.7z** ,**.rar** format.
 
 The layout resources are managed in the following path.<br>
 [https://github.com/trngaje/drastic_layout](https://github.com/trngaje/drastic_layout)
