@@ -155,9 +155,15 @@ drastic "$1" > /dev/pts/0 2>&1
 
 #### parameters1 : input assign
 in order to input the buttons sequentially, write a script as below and execute the drastic.
+
+drastic_assign_inputs.sh
 ~~~
-launch.sh --input-assign
+#!/bin/bash
+~/advanced_drastic/launch.sh --input-assign
 ~~~
+
+![](images/ports_1.png)
+![](images/ports_2.png)
 
 *****
 
