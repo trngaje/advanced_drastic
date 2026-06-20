@@ -47,6 +47,8 @@
 40. v2522:Modify FPS display to display cumulatively (6/19)
 41. fix issue that does not operate back key after entering about - Problem occurs when the menu hot key is assigned as b key (6/20)
 42. update menu_About - current glibc version and supporters (6/20)
+43. fix the issue that "Hotkey to save state does not work" (6/20)
+44. v2522:fix the issue that "Hotkey for frame count does not work" (6/20)
 
 ---
 

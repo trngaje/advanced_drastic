@@ -141,7 +141,7 @@ test files for crossmix, trimui smart pro <br>
 - step3.unzip the file in device
 
 #### for knulli
-Description based on the official version. <br>
+Description based on the official version(gladiator-ii-20250813). <br>
 ##### To modify temporarily <br>
 - step1. Run "nds rom" once to create "/userdata/system/configs/advanced_drastic/". <br>
 - step2. Remove libSDL2-2.0.so.0 in /userdata/system/configs/advanced_drastic/libs. <br>
@@ -227,14 +227,14 @@ export HOME=/mnt/SDCARD
 Identified Devices : rgb30<br>
 
 ##### to install advdrastic
-step1. Copy "install_for_dArkOS.sh" to the "/roms/ports/" folder and run it.<br>
+step1. Copy "install_for_darkos_rocknix.sh" to the "/roms/ports/" folder and run it.<br>
 - After execution, a "drastic.tar.gz" backup file is created in the "/opt/" folder and can be restored to the previous state at any time.<br>
 
 step2. Copy "drastic_assign_inputs.sh" to the ""/roms/ports" folder and run it. Enter the key according to the instructions displayed on the screen.<br>
 step3. Run the game.<br>
 
 ##### To remove the installed "advdrastic"
-Copy "uninstall_for_dArkOS.sh" to the "/roms/ports/" folder and run it.
+Copy "uninstall_for_darkos_rocknix.sh" to the "/roms/ports/" folder and run it.
 
 ##### Additional Information
 ssh : ark/ark <br>
