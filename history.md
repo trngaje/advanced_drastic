@@ -49,6 +49,15 @@
 42. update menu_About - current glibc version and supporters (6/20)
 43. fix the issue that "Hotkey to save state does not work" (6/20)
 44. v2522:fix the issue that "Hotkey for frame count does not work" (6/20)
+45. fix the issue that x button for unmap control  in menu is not working when x is hotkey menu (6/21)
+46. fix to display Unmapped if JS() value is  0xffff (6/21)
+47. fix the issue that osd not displayed for save/load state without hotkey (6/23)
+48. default settings : "Show controls input settings" to both (control_a and control_b) (6/23)
+49. v2522:AD_menu_assign_input : fix the issue that input values in a specific range are not stored(6/25)
+50. fix to set default (keyboard) value in control_a when setting assign input(6/25)
+51. fix to run in SDL mode. (7/17)
+52. fix to reverse position of the stylus pen and touch according to the `Mirror touchscreen` option.(7/26)
+
 
 ---
 

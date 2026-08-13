@@ -15,6 +15,18 @@ md5sum:59a7711eff41c640b8861b4d869c747d  drastic_v2520<br>
 md5sum:a08e38854fe32d86b60167a1c43d9175  drastic_v2520<br>
 md5sum:17550db727f3b59d36b57746ad1944be  drastic_v2522<br>
 
+### Comapre between v2.5.0.4(32bit), v2.5.2.x(64bit)
+
+functions|2.5.0.4|2.5.2.0|2.5.2.2
+-----|-----|-----|----
+rumble |X | O | O
+touch input | X | O | O
+audio output | ALSA | SDL2 | SDL2
+audio input | ALSA | X| X
+HW MIC | O | X | X
+FAKE MIC | X | O | O
+DQ IX graphical glitch| ? | has issue | no issue
+
 ### history
 
 - The parts that differ from drastic-steward are as follows.
@@ -119,7 +131,7 @@ The script for running is as follows.
 `/mnt/SDCARD/spruce/scripts/emu/lib/drastic_functions.sh`
 
 ~~~
-LD_PRELOAD=$EMU_DIR/libs/libadvdrastic.so  $EMU_DIR/drastic "$*" > /dev/pts/0 2>&1
+LD_PRELOAD=$EMU_DIR/libs/libadvdrastic.so  $EMU_DIR/drastic "$*"
 
 
 run_drastic_trngaje_a133p() {
@@ -162,6 +174,29 @@ hostname :KNULLI
 Identified Devices : rg ds<br>
 
 Run script to install from the officially released os.
+
+##### to install advdrastic
+step1. Copy "install_for_darkos_rocknix.sh" to the "/storage/roms/ports/" folder and run it.<br>
+- After execution, a "drastic.tar.gz" backup file is created in the "/storage/.config/" folder and can be restored to the previous state at any time.<br>
+
+##### to setup default input
+There are three ways.<br>
+Method 1. Set the default value using the input environment variable value used by rocknix. <br>
+- Copy "rocknix_control.sh" to the "/storage/roms/ports/" folder and run it.<br>
+
+Method 2. Enter the buttons sequentially. <br>
+- Copy "drastic_assign_inputs.sh" to the ""/storage/roms/ports" folder and run it. Enter the key according to the instructions displayed on the screen.<br>
+
+Method 3. Set default input with a value of es_input.cfg.<br>
+
+step3. Run the game.<br>
+
+##### To remove the installed "advdrastic"
+Copy "uninstall_for_darkos_rocknix.sh" to the "/storage/roms/ports/" folder and run it.
+
+##### Additional Information
+ssh : root/rocknix <br>
+Installation Path : /storage/.config/drastic <br>
 
 #### for stockos (miyoo flip)
 
@@ -241,6 +276,43 @@ ssh : ark/ark <br>
 Installation Path : /opt/drastic/ <br>
 The contents of the "config" folder remain unchanged and use the "dArkos" default setting.<br>
 
+#### from es_input.cfg to drastic.cfg
+./es_to_drastic.sh "/etc/emulationstation/es_input.cfg" "/opt/drastic/config/drastic.cfg" "retrogame_joypad" <br>
+
+es_input.cfg
+~~~
+<inputConfig type="joystick" deviceName="retrogame_joypad" deviceGUID="190000004b4800000111000000010000">
+        <input name="a" type="button" id="1" value="1" />
+        <input name="b" type="button" id="0" value="1" />
+        <input name="down" type="button" id="14" value="1" />
+        <input name="hotkeyenable" type="key" id="0" value="1" />
+        <input name="left" type="button" id="15" value="1" />
+        <input name="leftanalogdown" type="axis" id="1" value="1" />
+        <input name="leftanalogleft" type="axis" id="0" value="-1" />
+        <input name="leftanalogright" type="axis" id="0" value="1" />
+        <input name="leftanalogup" type="axis" id="1" value="-1" />
+        <input name="leftshoulder" type="button" id="4" value="1" />
+        <input name="leftthumb" type="button" id="11" value="1" />
+        <input name="lefttrigger" type="button" id="6" value="1" />
+        <input name="right" type="button" id="16" value="1" />
+        <input name="rightanalogdown" type="axis" id="3" value="1" />
+        <input name="rightanalogleft" type="axis" id="2" value="-1" />
+        <input name="rightanalogright" type="axis" id="2" value="1" />
+        <input name="rightanalogup" type="axis" id="3" value="-1" />
+        <input name="rightshoulder" type="button" id="5" value="1" />
+        <input name="rightthumb" type="button" id="12" value="1" />
+        <input name="righttrigger" type="button" id="7" value="1" />
+        <input name="select" type="button" id="8" value="1" />
+        <input name="start" type="button" id="9" value="1" />
+        <input name="up" type="button" id="13" value="1" />
+        <input name="x" type="button" id="2" value="1" />
+        <input name="y" type="button" id="3" value="1" />
+        <input name="pagedown" type="button" id="5" value="1" />
+        <input name="pageup" type="button" id="4" value="1" />
+        <input name="system_hk" type="button" id="10" value="1" />
+~~~
+
+
 ### Key settings
 
 key | assign
@@ -253,7 +325,7 @@ key | assign
 <kbd>select</kbd> + <kbd>right</kbd>  | inc index of layout
 <kbd>select</kbd> + <kbd>y</kbd>  | change themes
 <kbd>select</kbd> + <kbd>b</kbd>  | toggle blur / pixel mode
-~~<kbd>select</kbd> + <kbd>start</kbd>~~ | ~~display steward custom settings~~
+<kbd>select</kbd> + <kbd>start</kbd> | exit
 <kbd>select</kbd> + <kbd>l</kbd>  | quick load
 <kbd>select</kbd> + <kbd>r</kbd>  | quick save
 
