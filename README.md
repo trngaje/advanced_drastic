@@ -176,7 +176,23 @@ Identified Devices : rg ds<br>
 Run script to install from the officially released os.
 
 ##### to install advdrastic
-step1. Copy "install_for_darkos_rocknix.sh" to the "/storage/roms/ports/" folder and run it.<br>
+step1. Copy "install_for_darkos_rocknix.sh" to the "/storage/roms/ports/" folder.<br>
+~~~
+cd ~/roms/ports
+
+wget https://github.com/trngaje/advanced_drastic/raw/refs/heads/master/scripts/install_for_darkos_rocknix.sh
+
+wget https://github.com/trngaje/advanced_drastic/raw/refs/heads/master/scripts/uninstall_for_darkos_rocknix.sh
+
+wget https://github.com/trngaje/advanced_drastic/raw/refs/heads/master/scripts/drastic_assign_inputs.sh
+
+wget https://github.com/trngaje/advanced_drastic/raw/refs/heads/master/scripts/rocknix_control.sh
+
+chmod a+x *.sh
+~~~
+step2. update gamelists in es <br>
+step3. run it. <br>
+
 - After execution, a "drastic.tar.gz" backup file is created in the "/storage/.config/" folder and can be restored to the previous state at any time.<br>
 
 ##### to setup default input
@@ -442,6 +458,11 @@ the + is removed the cheat will be ignored.
 
 The layout resources are managed in the following path.<br>
 [https://github.com/trngaje/drastic_layout](https://github.com/trngaje/drastic_layout)
+
+### external shader
+
+You can use the shader files (.dfx/.dsd) used in Android drastic as they are.
+[https://github.com/jdgleaver/drastic_ds_shaders](https://github.com/jdgleaver/drastic_ds_shaders)
 
 ### trouble shootings
 

@@ -4,11 +4,17 @@ mydir=`dirname "$0"`
 
 FLAG_READY="/tmp/drastic.ready"
 
-if [ "$QUIRK_DEVICE" = "Anbernic RG DS" ]; then
+if [ "$QUIRK_DEVICE" = "Anbernic RG DS" ] || \
+   [ "$QUIRK_DEVICE" = "Anbernic RG DS Plus" ]; then
     if [ ! -e "$FLAG_READY" ]; then
 	touch $FLAG_READY
- 	echo 'for_window [app_id="drastic"] output DSI-2 pos 0 0, output DSI-1 power on pos 0 480' >> /storage/.config/sway/config 
- 	echo 'for_window [app_id="drastic"] floating enable, border none, fullscreen disable, resize set 640 960, move to output DSI-2, move absolute position 0 0' >> /storage/.config/sway/config 
+
+# 	echo 'for_window [app_id="drastic"] output DSI-2 pos 0 0, output DSI-1 power on pos 0 480' >> /storage/.config/sway/config 
+# 	echo 'for_window [app_id="drastic"] floating enable, border none, fullscreen disable, resize set 640 960, move to output DSI-2, move absolute position 0 0' >> /storage/.config/sway/config 
+
+	echo 'for_window [app_id="drastic"] floating enable, border none, fullscreen disable, move absolute position 0 0' >> /storage/.config/sway/config
+	echo 'for_window [app_id="drastic"] focus' >> /storage/.config/sway/config
+
 
 	swaymsg reload
     fi

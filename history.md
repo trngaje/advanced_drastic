@@ -57,6 +57,20 @@
 50. fix to set default (keyboard) value in control_a when setting assign input(6/25)
 51. fix to run in SDL mode. (7/17)
 52. fix to reverse position of the stylus pen and touch according to the `Mirror touchscreen` option.(7/26)
+53. v2522:define memory_struct, hook AD_memory_setup_slot2_rumble (8/6)
+54. Summary of font size calculations - adjust the appropriate number of lines instead of making them all the same (9
+/23)
+55. Add a BG color change menu (9/25)
+56. Modified to be aligned to the vertical screen for magicx-zero40 spruce OS (9/25)
+57. Configure the bg folder as (640x480_640x480) : On dual screens, folders are recognized by distinguishing each re
+solution (9/27)
+58. Example of setting the layout to the maximum size of each screen by default when no layout exists on the dual sc
+reen. Specify one default (9/27)
+.Modified to display the menu using the default shader: structure changes for the external/default shader(10/1)
+59. Fixed an issue where using it with an external shader and overlay caused it to display in the screen's black colo
+r (10/2)
+60. drastic_video.*: clean up unused functions and constants (10/2)
+
 
 
 ---
