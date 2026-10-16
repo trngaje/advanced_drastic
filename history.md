@@ -70,8 +70,8 @@ reen. Specify one default (9/27)
 59. Fixed an issue where using it with an external shader and overlay caused it to display in the screen's black colo
 r (10/2)
 60. drastic_video.*: clean up unused functions and constants (10/2)
-
-
+61. fix to hide osd on initial startup(10/7)
+62. Modify to display custom cheat (.cht) information in the custom menu (10/15)
 
 ---
 
