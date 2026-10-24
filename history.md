@@ -72,6 +72,10 @@ r (10/2)
 60. drastic_video.*: clean up unused functions and constants (10/2)
 61. fix to hide osd on initial startup(10/7)
 62. Modify to display custom cheat (.cht) information in the custom menu (10/15)
+63. rg-ds : Modified to create two windows for the dual screen (10/23)
+64. V2520 : Due to the issue where auto-load does not work (when running v2522->v2520), the save state for v2520 has been modified to append _v2520 to the end of the file as shown below </br>
+(K) 마리??카트 DS_0.dss --> 
+(K) 마리??카트 DS_0_v2520.dss
 
 ---
 
