@@ -225,6 +225,28 @@ The layout resources are managed in the following path.<br>
 You can use the shader files (.dfx/.dsd) used in Android drastic as they are.
 [https://github.com/jdgleaver/drastic_ds_shaders](https://github.com/jdgleaver/drastic_ds_shaders)
 
+### multi-language
+
+resources/lang/* <br>
+syntax <br>
+[English Menu Name]=[Translated Menu Name]<br>
+ex) korean_kr <br>
+~~~
+Load state=빠른 저장 불러오기
+Save state=빠른 저장 하기
+Options=옵션
+Controls=입력 설정
+Performances=성능
+Screens configuration=화면 설정
+NDS Firmware=NDS 펌웨어
+Cheats=치트
+Load new game=새로운 게임 불러오기
+Restart game=게임 재 시작하기
+Return to game=게임으로 돌아가기
+Exit DraStic=끝내기
+About=정보
+~~~
+
 ### trouble shootings
 
 1. NDS has screen0 and screen1. stylus pen is used in screen1. In some roms, there is a case where the cursor is displayed on screen0 rather than screen1, which is a drastic original problem. If I know the rom, I can temporarily modify it to be displayed on the other screen. Please report to me. <br>

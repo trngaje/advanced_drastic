@@ -74,8 +74,15 @@ r (10/2)
 62. Modify to display custom cheat (.cht) information in the custom menu (10/15)
 63. rg-ds : Modified to create two windows for the dual screen (10/23)
 64. V2520 : Due to the issue where auto-load does not work (when running v2522->v2520), the save state for v2520 has been modified to append _v2520 to the end of the file as shown below </br>
-(K) 마리??카트 DS_0.dss --> 
+(K) 마리??카트 DS_0.dss -->
 (K) 마리??카트 DS_0_v2520.dss
+65. If there is no theme folder matching the resolution, create one(10/27)
+66. v2520:Fixed an issue where changes to the shader were not applied immediately (10/29)
+67. change from pixel_filter of settings.json to enable_nearest of drastic.cfg (10/30)
+68. add options for theme/pixel filter (10/30)
+69. Show menu items only if they are relevant to process_displaylayout_surface(10/31)
+70. v2520:fix the issue that the in-game screen would not update after entering the menu screen (11/1)
+
 
 ---
 
